@@ -1,0 +1,12 @@
+%li.item.clickable{"data-id" => item.id, "data-type" => item.type}
+  %table
+    %tr
+      %td.media
+        - if item.type == 'file'
+          - icon_url = item.thumbnail
+          .thumb_small{:style => "background-image: url(#{icon_url})"}
+        - else
+          .folder_icon.overlay
+            %span.overlay_content= item.file_count
+      %td.data
+        = item.name

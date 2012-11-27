@@ -1,0 +1,3 @@
+Box Authentication:
+Ticket = Get a new ticket by passing get_ticket action and app API KEY
+Direct the user to https://www.box.com/api/1.0/auth/{your ticket}

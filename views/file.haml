@@ -1,0 +1,14 @@
+.item-box.file
+  %h1
+    - if file.shared_name
+      %a{:href => "http://www.box.net/shared/#{file.shared_name}"}= file.name
+    - else
+      = file.name
+  - if file.description
+    %h5= file.description
+  %h5
+    Created at: #{Time.at(file.created.to_i).ctime}
+  %h5
+    Updated at: #{Time.at(file.updated.to_i).ctime}
+  %br/
+  = file.embed_code(:width => 640, :height => 480)

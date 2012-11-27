@@ -1,0 +1,7 @@
+%ul.item-box{"data-id" => folder.id}
+  %li.item
+    .add_folder.button Add Folder
+  %li.item
+    .add_file.button Add File
+  - (folder.folders + folder.files).each do |item|
+    = partial(:item, :item => item)

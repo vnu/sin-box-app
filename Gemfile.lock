@@ -1,0 +1,35 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    box-api (0.2.2)
+      httmultiparty (~> 0.3.6)
+    haml (3.1.7)
+    httmultiparty (0.3.8)
+      httparty (>= 0.7.3)
+      multipart-post
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
+    multi_json (1.3.7)
+    multi_xml (0.5.1)
+    multipart-post (1.1.5)
+    rack (1.4.1)
+    rack-flash3 (1.0.1)
+      rack
+      rack
+    rack-protection (1.2.0)
+      rack
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  box-api (~> 0.2.2)
+  haml
+  rack-flash3
+  sinatra
