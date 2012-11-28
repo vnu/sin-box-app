@@ -119,6 +119,21 @@ post "/folder/add/:parent_id" do |parent_id|
   partial :item, :item => folder # render the information about this folder
 end
 
+#Copy the pitch file and create a new folder
+post "/folder/pitch/:file_id" do |file_id|
+  account = require_login
+  parent = account.root
+
+  name = params[:name]         # get the desired folder name
+  folder = parent.create(name) # create a new folder with this name
+
+  file = account.file(file_id) # get the file by id
+
+  file1 = file.copy(folder)
+
+  
+end
+
 # Gets a file by id and returns its details.
 get "/file/:file_id" do |file_id|
   account = require_login  # make sure the user is authorized
@@ -135,7 +150,7 @@ get "/file/add/:parent_id" do |parent_id|
   partial :add_file, :parent_id => parent_id
 end
 
-# Creates a new folder with the given information.
+# Creates a new file with the given information.
 post "/file/add/:parent_id" do |parent_id|
   account = require_login        # make sure the user is authorized
   parent = account.folder(parent_id) # get the parent folder by id
@@ -148,6 +163,7 @@ post "/file/add/:parent_id" do |parent_id|
 
   redirect "/" # redirect to the home page
 end
+
 
 
 # Handles logout requests.

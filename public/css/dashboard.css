@@ -37,6 +37,8 @@
   cursor: pointer;
 }
 
+
+
 /* Stuff within each item */
 .overlay {
   position: relative;
@@ -57,11 +59,36 @@
   padding-left: 6px;
 }
 
+
 .folder_icon {
   background: transparent url(/img/folder.png);
   height: 32px;
   width: 32px;
 }
+
+.pitch {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57abe8), to(#257dc2));
+  background: -moz-linear-gradient(top,#A2C0E1,#7198BF);
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.pitch2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57abe8), to(#257dc2));
+  background: -moz-linear-gradient(top,#A2C0E1,#7198BF);
+  border-radius: 5px;
+  color: #222;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+
 
 .button {
 	background: -webkit-gradient(linear, left top, left bottom, from(#57abe8), to(#257dc2));
@@ -72,6 +99,7 @@
   font-weight: bold;
   padding: 4px 8px;
 	text-align: center;
+
 }
 
 .button:hover {

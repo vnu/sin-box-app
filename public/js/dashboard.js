@@ -13,6 +13,38 @@ $(document).ready(function() {
     pane.nextAll().hide('fast', function() { $(this).remove; });
   }
 
+$('.pitcher.clickable').live('click',function(){
+     
+      var id = $(this).data('id');
+      var type = $(this).data('type');
+      var pane = $(this).closest('.pane');
+      var item_box = $(this).closest('.item-box');
+      var parent_id = item_box.data('id');
+
+      var item = $(this).closest('.item');
+      var name = "crush_pitc"
+
+      $(this).hide().after("<div class=\"spinny\"></div>");
+      
+
+     $.post("folder/pitch/"+ id, { name: name }, function(){
+
+      remove_next_panes(pane);
+
+
+
+      $(".pitch").show('fast');
+        
+     });
+
+
+
+    // Prevent the default form behavoir.
+    return false;
+
+    });
+
+
   // Handles click events on any clickable items.
   $('.item.clickable').live('click', function() {
     var id = $(this).data('id');
@@ -23,6 +55,7 @@ $(document).ready(function() {
     $('.item.selected', pane).removeClass('selected');
     $(this).addClass('selected');
 
+    
     // Remove any existing panes to the right of this one
     remove_next_panes(pane);
 
@@ -38,6 +71,7 @@ $(document).ready(function() {
       add_next_pane(pane, data);
     });
   });
+
 });
 
 /* File/Folder creation logic */
